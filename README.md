@@ -27,3 +27,32 @@ A Windows Forms application for managing superhero trainee records at One Kick H
 - Regular pushes to GitHub to maintain project sync
 
 # Project Structure
+
+```
+SuperheroDatabase/
+├── Models/                    # Data models
+│   ├── Superhero.cs          # Superhero entity class
+│   └── RankCalculator.cs     # Rank/threat level calculator
+├── Services/                  # Business logic layer
+│   └── SuperheroRepository.cs # Data persistence service
+├── UI/                        # User interface forms
+│   ├── SuperheroesForm.cs    # Main application form
+│   └── SuperheroesForm.Designer.cs
+├── Data/                      # Data storage
+│   ├── superheroes.txt       # Superhero records (CSV)
+│   └── summary.txt           # Generated summary reports
+├── Properties/                # Project properties
+└── Program.cs                # Application entry point
+```
+
+# Technical Details
+
+## Architecture
+- **3-Tier Architecture**: UI → Services → Data
+- **Namespace Structure**:
+  - `SuperheroDatabase.Models` - Data entities
+  - `SuperheroDatabase.Services` - Business logic
+  - `SuperheroDatabase.UI` - User interface
+
+## Data Format
+CSV format: `HeroID,Name,Age,Superpower,ExamScore,Rank,ThreatLevel`
